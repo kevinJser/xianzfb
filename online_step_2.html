@@ -424,18 +424,20 @@
 
             //图片添加
             $(".demoContainer").on("click", ".am-image-picker-upload-btn", function () {
-                var _this = this;
+                var _this = this;               
 
-                var _html = `<div class="am-image-picker-item-remove"></div>
-                                <div class="am-image-picker-item-content" style="background-image: url(&quot;https://zos.alipayobjects.com/rmsportal/PZUUCKTRIHWiZSY.jpeg&quot;); transform: rotate(0deg);"></div>`
-                var _nextHtml = "";
-                var _next = $(_this).parent('.am-flexbox-item').next('.am-flexbox-item');
-                var _siblingsWrap = $(_this).parent('.am-flexbox-item').parent('.am-flexbox').siblings('.am-flexbox');
+                ap.chooseImage(1, function (res) {
+                    // ap.alert(JSON.stringify(res));
+                    var _html = `<div class="am-image-picker-item-remove"></div>
+                                <div class="am-image-picker-item-content" style="background-image: url(${res.apFilePaths[0]}); transform: rotate(0deg);"></div>`
+                    var _nextHtml = "";
+                    var _next = $(_this).parent('.am-flexbox-item').next('.am-flexbox-item');
+                    var _siblingsWrap = $(_this).parent('.am-flexbox-item').parent('.am-flexbox').siblings('.am-flexbox');
 
-                $(_this).removeClass('am-image-picker-upload-btn')
-                    .html(_html);
-                if (_next.length == 0 && _siblingsWrap.length == 0) {
-                    _nextHtml = `<div class="am-flexbox am-flexbox-align-center" style="">
+                    $(_this).removeClass('am-image-picker-upload-btn')
+                        .html(_html);
+                    if (_next.length == 0 && _siblingsWrap.length == 0) {
+                        _nextHtml = `<div class="am-flexbox am-flexbox-align-center" style="">
                                             <div class="am-flexbox-item" style="">
                                                 <div class="am-image-picker-item am-image-picker-upload-btn">
                                                 </div>
@@ -447,47 +449,18 @@
                                             <div class="am-flexbox-item" style="">
                                             </div>                                          
                                         </div>`;
-                    $(_this).closest(".am-flexbox").after(_nextHtml);
+                        $(_this).closest(".am-flexbox").after(_nextHtml);
 
-                } else if (_next.length !== 0 && _siblingsWrap.length == 0) {
-                    _nextHtml = `<div class="am-image-picker-item am-image-picker-upload-btn">
+                    } else if (_next.length !== 0 && _siblingsWrap.length == 0) {
+                        _nextHtml = `<div class="am-image-picker-item am-image-picker-upload-btn">
                                         </div>`;
-                    _next.html(_nextHtml);
-                }
-                // ap.chooseImage(1, function (res) {
-                //     // ap.alert(JSON.stringify(res));
-                //     var _html = `<div class="am-image-picker-item-remove"></div>
-                //                 <div class="am-image-picker-item-content" style="background-image: url(${res.apFilePaths[0]}); transform: rotate(0deg);"></div>`
-                //     var _nextHtml = "";
-                //     var _next = $(_this).parent('.am-flexbox-item').next('.am-flexbox-item');                    
+                        _next.html(_nextHtml);
+                    }
 
-                //     $(_this).removeClass('am-image-picker-upload-btn')
-                //         .html(_html);
-                //     if (_next.length == 0) {
-                //         _nextHtml = `<div class="am-flexbox am-flexbox-align-center" style="">
-                //                             <div class="am-flexbox-item" style="">
-                //                                 <div class="am-image-picker-item am-image-picker-upload-btn">
-                //                                 </div>
-                //                             </div>
-                //                             <div class="am-flexbox-item" style="">
-                //                             </div>
-                //                             <div class="am-flexbox-item" style="">
-                //                             </div>                                            
-                //                             <div class="am-flexbox-item" style="">
-                //                             </div>
-                //                         </div>`;                       
-                //         $(_this).closest(".am-flexbox").after(_nextHtml);
-
-                //     }else {
-                //         _nextHtml = `<div class="am-image-picker-item am-image-picker-upload-btn">
-                //                         </div>`;
-                //         _next.html(_nextHtml);
-                //     }
-
-                //     // if (img instanceof HTMLImageElement) {
-                //     //     img.src = res.apFilePaths[0];
-                //     // }
-                // });
+                    // if (img instanceof HTMLImageElement) {
+                    //     img.src = res.apFilePaths[0];
+                    // }
+                });
             })
 
             //图片删除

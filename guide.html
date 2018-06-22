@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"
+    />
+    <link rel="stylesheet" href="https://gw.alipayobjects.com/as/g/antui/antui/10.1.10/dpl/antui.css" />
+    <link rel="stylesheet" href="https://gw.alipayobjects.com/as/g/antui/antui/10.1.10/dpl/widget/search.css" />
+    <link href="https://as.alipayobjects.com/g/component/swiper/3.2.7/swiper.min.css">
+
+
+    <script src="js/common/jquery-1.11.3.js"></script>
+    <!-- <script src="https://gw.alipayobjects.com/as/g/antui/antui/10.1.10/script/tab-nav.js"></script> -->
+    <!-- <script src="https://gw.alipayobjects.com/as/g/antui/antui/10.1.10/antui.js"></script> -->
+    <script src="https://as.alipayobjects.com/g/component/swiper/3.2.7/swiper.min.js"></script>
+    <title>办事指南</title>
+</head>
+<style>
+    .sw-brief-link {
+        display: inline-block;
+        vertical-align: middle;
+        color: #108ee9;
+        margin-left: .5em;
+    }
+
+    .sw-brief-text {
+        vertical-align: middle;
+    }
+
+    .am-list-brief img {
+        width: 14px;
+        height: 14px;
+        vertical-align: middle;
+    }
+
+    .demo-content-scroll {
+        position: absolute;
+        width: 100%;
+        top: 96px;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .demo-content-scroll-nav {
+        white-space: nowrap;
+        font-size: 0;
+        overflow-y: hidden;
+    }
+
+    .am-list-twoline-text-item {
+        width: 100%;
+        display: inline-block;
+        font-size: 16px;
+        vertical-align: top;
+        padding-top: 0;
+    }
+</style>
+
+<body>
+    <!-- 搜索栏 -->
+    <a class="am-search-link" aria-label="搜索" href="#">
+        <div class="am-search-input" aria-hidden="true">
+            <i class="am-icon search"></i>
+            <span class="am-search-ph">搜索</span>
+        </div>
+    </a>
+
+    <!-- 标题栏 -->
+    <div class="am-tab demo-tab-scroll">
+        <div id="swTab" class="am-tab-scroll-nav" style="transform: translateX(0px);">
+            <!-- <div class="am-tab-item selected">
+                <span>就业创业</span>
+            </div>
+            <div class="am-tab-item">
+                <span>企退服务</span>
+            </div>
+            <div class="am-tab-item">
+                <span>社会保险</span>
+            </div>
+            <div class="am-tab-item">
+                <span>卫生计生</span>
+            </div>
+            <div class="am-tab-item">
+                <span>居家养老</span>
+            </div>
+            <div class="am-tab-item">
+                <span>社会救助</span>
+            </div>
+            <div class="am-tab-item">
+                <span>双拥优抚</span>
+            </div>
+            <div class="am-tab-item">
+                <span>残联补助</span>
+            </div>
+            <div class="am-tab-item">
+                <span>城管工作</span>
+            </div>
+            <div class="am-tab-item">
+                <span>其他</span>
+            </div> -->
+        </div>
+    </div>
+
+    <!-- 主题内容 -->
+    <div class="demo-content-scroll">
+        <div class="demo-content-scroll-nav style=" transform: translateX(0px); "">
+            <!-- <div class="am-list am-list-twoline-text am-list-twoline-text-item">
+                <div class="am-list-body">
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">就业困难人员认定1</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">失业登记</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">灵活就业申报</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <img src="images/corp.png" alt="图片">
+                                <span class="sw-brief-text">法人</span>
+                                <img src="images/group.png" alt="图片">
+                                <span class="sw-brief-text">其他组织</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">失业登记</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">失业登记</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">失业登记</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">失业登记</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">失业登记</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">失业登记</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">失业登记</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="am-list am-list-twoline-text am-list-twoline-text-item">
+                <div class="am-list-body">
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">就业困难人员认定2</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">失业登记</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">灵活就业申报</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <img src="images/corp.png" alt="图片">
+                                <span class="sw-brief-text">法人</span>
+                                <img src="images/group.png" alt="图片">
+                                <span class="sw-brief-text">其他组织</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="am-list am-list-twoline-text am-list-twoline-text-item">
+                <div class="am-list-body">
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">就业困难人员认定3</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">失业登记</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">灵活就业申报</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <img src="images/corp.png" alt="图片">
+                                <span class="sw-brief-text">法人</span>
+                                <img src="images/group.png" alt="图片">
+                                <span class="sw-brief-text">其他组织</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="am-list am-list-twoline-text am-list-twoline-text-item">
+                <div class="am-list-body">
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">就业困难人员认定4</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">失业登记</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">灵活就业申报</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <img src="images/corp.png" alt="图片">
+                                <span class="sw-brief-text">法人</span>
+                                <img src="images/group.png" alt="图片">
+                                <span class="sw-brief-text">其他组织</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="am-list am-list-twoline-text am-list-twoline-text-item">
+                <div class="am-list-body">
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">就业困难人员认定5</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">失业登记</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">灵活就业申报</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <img src="images/corp.png" alt="图片">
+                                <span class="sw-brief-text">法人</span>
+                                <img src="images/group.png" alt="图片">
+                                <span class="sw-brief-text">其他组织</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="am-list am-list-twoline-text am-list-twoline-text-item">
+                <div class="am-list-body">
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">就业困难人员认定6</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">失业登记</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">灵活就业申报</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <img src="images/corp.png" alt="图片">
+                                <span class="sw-brief-text">法人</span>
+                                <img src="images/group.png" alt="图片">
+                                <span class="sw-brief-text">其他组织</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="am-list am-list-twoline-text am-list-twoline-text-item">
+                <div class="am-list-body">
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">就业困难人员认定7</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">失业登记</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">灵活就业申报</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <img src="images/corp.png" alt="图片">
+                                <span class="sw-brief-text">法人</span>
+                                <img src="images/group.png" alt="图片">
+                                <span class="sw-brief-text">其他组织</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="am-list am-list-twoline-text am-list-twoline-text-item">
+                <div class="am-list-body">
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">就业困难人员认定8</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">失业登记</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">灵活就业申报</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <img src="images/corp.png" alt="图片">
+                                <span class="sw-brief-text">法人</span>
+                                <img src="images/group.png" alt="图片">
+                                <span class="sw-brief-text">其他组织</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="am-list am-list-twoline-text am-list-twoline-text-item">
+                <div class="am-list-body">
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">就业困难人员认定9</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">失业登记</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">灵活就业申报</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <img src="images/corp.png" alt="图片">
+                                <span class="sw-brief-text">法人</span>
+                                <img src="images/group.png" alt="图片">
+                                <span class="sw-brief-text">其他组织</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="am-list am-list-twoline-text am-list-twoline-text-item">
+                <div class="am-list-body">
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">就业困难人员认定10</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">失业登记</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="am-list-item">
+                        <div class="am-list-content">
+                            <div class="am-list-title">灵活就业申报</div>
+                            <div class="am-list-brief">
+                                <img src="images/person.png" alt="图片">
+                                <span class="sw-brief-text">个人</span>
+                                <img src="images/corp.png" alt="图片">
+                                <span class="sw-brief-text">法人</span>
+                                <img src="images/group.png" alt="图片">
+                                <span class="sw-brief-text">其他组织</span>
+                                <div class="sw-brief-link">
+                                    <img src="images/line_transact_sm.png" alt="图片">
+                                    <span class="sw-brief-text">在线办理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-list-arrow" aria-hidden="true">
+                            <span class="am-icon arrow horizontal"></span>
+                        </div>
+                    </a>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            var mySwiper1;
+            var mySwiper2;
+            var tabData = [{ "rank": "001", "name": "就业创业", "children": [{ "parentId": "201707190001", "rank": "001001", "name": "就业困难人员认定", "serviceObject": "个人 " }, { "parentId": "201707190001", "rank": "001002", "name": "失业登记", "serviceObject": "个人 " }, { "parentId": "201707190001", "rank": "001003", "name": "灵活就业申报", "serviceObject": "个人 " }, { "parentId": "201707190001", "rank": "001004", "name": "灵活就业补助和社会保险费补贴申请、中止", "serviceObject": "个人 " }, { "parentId": "201707190001", "rank": "001005", "name": "用工补助和社会保险费受理、核发", "serviceObject": "个人 法人 其他组织 " }, { "parentId": "201707190001", "rank": "001006", "name": "用工补助和社会保险费补贴受理、核发(区级)", "serviceObject": "个人 其他组织 " }, { "parentId": "201707190001", "rank": "001007", "name": "下城区就业助推申报", "serviceObject": "个人 " }, { "parentId": "201707190001", "rank": "001008", "name": "下城区就业助推补贴申请、中止", "serviceObject": "个人 法人 " }, { "parentId": "201707190001", "rank": "001009", "name": "创业担保贷款贴息资格认定申请", "serviceObject": "个人 法人 " }, { "parentId": "201707190001", "rank": "001010", "name": "小微企业新招用高校毕业生社保补贴受理、核发", "serviceObject": "法人 其他组织 " }, { "parentId": "201707190001", "rank": "001011", "name": "一次性创业社保补贴受理、核发", "serviceObject": "法人 其他组织 " }, { "parentId": "201707190001", "rank": "001012", "name": "就业困难人员自主创业补助和社会保险费补贴受理、核发", "serviceObject": "个人 法人 " }, { "parentId": "201707190001", "rank": "001013", "name": "自谋职业自主创业补助和社会保险费补贴（区级）受理、核发", "serviceObject": "法人 " }, { "parentId": "201707190001", "rank": "001014", "name": "享受失业保险金期间自谋职业人员创业扶持资金申领", "serviceObject": "个人 " }, { "parentId": "201707190001", "rank": "001016", "name": "法定退休年龄后继续缴纳养老保险人员社会保险费补贴申请、核发", "serviceObject": "个人 " }, { "parentId": "201707190001", "rank": "001018", "name": "领取失业金期间或期满失业人员生育补助申请", "serviceObject": "个人 " }] }, { "rank": "002", "name": "企退服务", "children": [{ "parentId": "201707190002", "rank": "002002", "name": "失业人员（仅限部分人员）正常退休办理（代收材料）", "serviceObject": "个人 " }, { "parentId": "201707190002", "rank": "002004", "name": "企退人员社会化管理关系转移", "serviceObject": "个人 法人 " }, { "parentId": "201707190002", "rank": "002005", "name": "企业退休人员工龄证明", "serviceObject": "个人 " }, { "parentId": "201707190002", "rank": "002006", "name": "市本级退休人员查询打印待遇发放清单", "serviceObject": "个人 " }, { "parentId": "201707190002", "rank": "002007", "name": "异地领取基本养老金资格协助认证", "serviceObject": "个人 法人 其他组织 " }, { "parentId": "201707190002", "rank": "002008", "name": "杭州市一次性补缴（缴纳）基本养老保险费申请", "serviceObject": "个人 " }, { "parentId": "201707190002", "rank": "002009", "name": "杭州市区支援外地建设退休回杭定居人员生活困难补助", "serviceObject": "个人 " }, { "parentId": "201707190002", "rank": "002011", "name": "企业退休人员缴费年限（含视同缴费年限）的重新认定", "serviceObject": "个人 " }, { "parentId": "201707190002", "rank": "002014", "name": "企业退休人员档案查（借）阅", "serviceObject": "法人 其他组织 " }, { "parentId": "201707190002", "rank": "002015", "name": "企退人员开具亲属关系、党员材料等证明档案查阅", "serviceObject": "个人 " }] }, { "rank": "003", "name": "社会保险", "children": [{ "parentId": "201707190003", "rank": "003014", "name": "参保人员查询打印社会保险信息", "serviceObject": "个人 " }, { "parentId": "201707190003", "rank": "003016", "name": "城乡居民基本医疗保险参保登记", "serviceObject": "个人 " }, { "parentId": "201707190003", "rank": "003017", "name": "个体劳动者（灵活就业人员）参保登记", "serviceObject": "个人 法人 其他组织 " }, { "parentId": "201707190003", "rank": "003018", "name": "个体劳动者（灵活就业人员）参保信息变更登记", "serviceObject": "个人 " }, { "parentId": "201707190003", "rank": "003019", "name": "开具个体劳动者、城乡居民医保体检单", "serviceObject": "个人 " }, { "parentId": "201707190003", "rank": "003020", "name": "基本医疗保险就医凭证的核发", "serviceObject": "个人 " }, { "parentId": "201707190003", "rank": "003022", "name": "网上办事个人认证", "serviceObject": "个人 " }, { "parentId": "201707190003", "rank": "003025", "name": "离退休人员死亡待遇核准支付", "serviceObject": "个人 " }] }, { "rank": "005", "name": "卫生计生", "children": [{ "parentId": "201707190005", "rank": "005001", "name": "生育登记", "serviceObject": "个人 " }, { "parentId": "201707190005", "rank": "005002", "name": "再生育审批", "serviceObject": "个人 " }, { "parentId": "201707190005", "rank": "005003", "name": "个人生育记录证明（流动人口婚育证明）", "serviceObject": "个人 " }, { "parentId": "201707190005", "rank": "005004", "name": "独生子女父母光荣证", "serviceObject": "个人 " }, { "parentId": "201707190005", "rank": "005005", "name": "独生子女父母奖励费核发（失业登记对象）", "serviceObject": "个人 " }, { "parentId": "201707190005", "rank": "005006", "name": "国家免费孕前检查登记", "serviceObject": "个人 " }, { "parentId": "201707190005", "rank": "005008", "name": "计划生育特殊家庭养老照护申请", "serviceObject": "个人 " }, { "parentId": "201707190005", "rank": "005010", "name": "计划生育特别扶助", "serviceObject": "个人 " }, { "parentId": "201707190005", "rank": "005012", "name": "计划生育公益金（生育救助）", "serviceObject": "个人 " }] }, { "rank": "007", "name": "居家养老", "children": [{ "parentId": "201707190007", "rank": "007001", "name": "老年优待证办理", "serviceObject": "个人 " }, { "parentId": "201707190007", "rank": "007003", "name": "养老服务补贴给付", "serviceObject": "个人 " }] }, { "rank": "008", "name": "社会救助", "children": [{ "parentId": "201707190008", "rank": "008001", "name": "城市低收入家庭资格认定（住房保障）", "serviceObject": "个人 " }, { "parentId": "201707190008", "rank": "008002", "name": "城乡居民最低生活保障家庭参保补助核发", "serviceObject": "个人 " }, { "parentId": "201707190008", "rank": "008005", "name": "特困人员救助供养认定及保障金给付", "serviceObject": "个人 法人 其他组织 " }, { "parentId": "201707190008", "rank": "008006", "name": "最低生活保障家庭认定及保障金给付", "serviceObject": "个人 法人 其他组织 " }, { "parentId": "201707190008", "rank": "008007", "name": "最低生活保障边缘家庭认定及保障金给付", "serviceObject": "个人 " }, { "parentId": "201707190008", "rank": "008009", "name": "临时救助对象认定及救助金给付", "serviceObject": "个人 " }, { "parentId": "201707190008", "rank": "008010", "name": "四级救助圈困难家庭老人住院护理补贴核发", "serviceObject": "个人 " }, { "parentId": "201707190008", "rank": "008011", "name": "四级救助圈困难家庭子女就学救助款核发", "serviceObject": "个人 " }, { "parentId": "201707190008", "rank": "008012", "name": "春风卡的审批和发放", "serviceObject": "个人 " }, { "parentId": "201707190008", "rank": "008041", "name": "吸毒人员服药补贴核发", "serviceObject": "个人 " }, { "parentId": "201707190008", "rank": "008042", "name": "归正人员生活救助核发", "serviceObject": "个人 " }, { "parentId": "201707190008", "rank": "008044", "name": "出具捐赠凭证", "serviceObject": "个人 法人 其他组织 " }] }, { "rank": "009", "name": "双拥优抚", "children": [{ "parentId": "201707190009", "rank": "009001", "name": "义务兵家庭优待金发放", "serviceObject": "个人 " }, { "parentId": "201707190009", "rank": "009002", "name": "杭州市企业退休的复原军人和退伍军人慰问金申报", "serviceObject": "个人 " }, { "parentId": "201707190009", "rank": "009003", "name": "“三属”优待证办理", "serviceObject": "个人 " }, { "parentId": "201707190009", "rank": "009006", "name": "“三属”补差申请", "serviceObject": "个人 " }] }, { "rank": "012", "name": "残联补助", "children": [{ "parentId": "f36edb1a4c98b47a014ca0e342680003", "rank": "012015", "name": "残障补贴", "serviceObject": "个人 " }, { "parentId": "f36edb1a4c98b47a014ca0e342680003", "rank": "012016", "name": "养老保险补贴", "serviceObject": "个人 " }, { "parentId": "f36edb1a4c98b47a014ca0e342680003", "rank": "012017", "name": "医疗保险补贴", "serviceObject": "个人 " }, { "parentId": "f36edb1a4c98b47a014ca0e342680003", "rank": "012018", "name": "就学补助", "serviceObject": "个人 " }, { "parentId": "f36edb1a4c98b47a014ca0e342680003", "rank": "012019", "name": "廉租房补贴", "serviceObject": "个人 " }, { "parentId": "f36edb1a4c98b47a014ca0e342680003", "rank": "012020", "name": "电费补贴", "serviceObject": "个人 " }, { "parentId": "f36edb1a4c98b47a014ca0e342680003", "rank": "012021", "name": "辅助器具报销", "serviceObject": "个人 " }, { "parentId": "f36edb1a4c98b47a014ca0e342680003", "rank": "012022", "name": "助听器验配补贴", "serviceObject": "个人 " }, { "parentId": "f36edb1a4c98b47a014ca0e342680003", "rank": "012023", "name": "助视器验配补贴", "serviceObject": "个人 " }, { "parentId": "f36edb1a4c98b47a014ca0e342680003", "rank": "012024", "name": "精神病服药补贴", "serviceObject": "个人 " }, { "parentId": "f36edb1a4c98b47a014ca0e342680003", "rank": "012025", "name": "白内障手术补贴", "serviceObject": "个人 " }, { "parentId": "f36edb1a4c98b47a014ca0e342680003", "rank": "012026", "name": "无障碍补贴", "serviceObject": "个人 " }, { "parentId": "f36edb1a4c98b47a014ca0e342680003", "rank": "012027", "name": "个体扶持补贴", "serviceObject": "个人 " }, { "parentId": "f36edb1a4c98b47a014ca0e342680003", "rank": "012028", "name": "意外伤害补助", "serviceObject": "个人 " }, { "parentId": "f36edb1a4c98b47a014ca0e342680003", "rank": "012029", "name": "医疗救助", "serviceObject": "个人 " }, { "parentId": "f36edb1a4c98b47a014ca0e342680003", "rank": "012030", "name": "住院慰问", "serviceObject": "个人 " }, { "parentId": "f36edb1a4c98b47a014ca0e342680003", "rank": "012031", "name": "大病护理补贴", "serviceObject": "个人 " }, { "parentId": "f36edb1a4c98b47a014ca0e342680003", "rank": "012033", "name": "0到6周岁残疾儿童抢救性康复补贴", "serviceObject": "个人 " }, { "parentId": "f36edb1a4c98b47a014ca0e342680003", "rank": "012034", "name": "康复训练补贴", "serviceObject": "个人 " }, { "parentId": "f36edb1a4c98b47a014ca0e342680003", "rank": "012035", "name": "贴息贷款补助", "serviceObject": "个人 " }, { "parentId": "f36edb1a4c98b47a014ca0e342680003", "rank": "012036", "name": "假肢验配补贴", "serviceObject": "个人 " }, { "parentId": "f36edb1a4c98b47a014ca0e342680003", "rank": "012037", "name": "肢体矫治手术补贴", "serviceObject": "个人 " }, { "parentId": "f36edb1a4c98b47a014ca0e342680003", "rank": "012038", "name": "精神病住院补贴", "serviceObject": "个人 " }, { "parentId": "f36edb1a4c98b47a014ca0e342680003", "rank": "012039", "name": "人工耳蜗手术补贴", "serviceObject": "个人 " }, { "parentId": "f36edb1a4c98b47a014ca0e342680003", "rank": "012040", "name": "重度残疾人护理补贴", "serviceObject": "个人 " }, { "parentId": "f36edb1a4c98b47a014ca0e342680003", "rank": "012041", "name": "残疾车主陪护补贴", "serviceObject": "个人 " }, { "parentId": "f36edb1a4c98b47a014ca0e342680003", "rank": "012042", "name": "儿童节慰问", "serviceObject": "个人 " }, { "parentId": "f36edb1a4c98b47a014ca0e342680003", "rank": "012043", "name": "亮居补贴", "serviceObject": "个人 " }, { "parentId": "f36edb1a4c98b47a014ca0e342680003", "rank": "012044", "name": "家电配送补贴", "serviceObject": "个人 " }, { "parentId": "f36edb1a4c98b47a014ca0e342680003", "rank": "012047", "name": "残疾车主燃油补贴", "serviceObject": "个人 " }] }, { "rank": "017", "name": "城管工作", "children": [{ "parentId": "201707190010", "rank": "017001", "name": "犬证办理审核", "serviceObject": "个人 法人 其他组织 " }] }, { "rank": "019", "name": "其他", "children": [{ "parentId": "bb4ac4f9616f0e900161742d4a7d03f3", "rank": "019001", "name": "红十字人道救助", "serviceObject": "个人 法人 其他组织 " }, { "parentId": "bb4ac4f9616f0e900161742d4a7d03f3", "rank": "019002", "name": "市、区两级救助圈困难家庭就医救助核发", "serviceObject": "个人 法人 其他组织 " }] }];
+            $(function () {
+                $.ajax({
+                    url: 'http://api.jisuapi.com/iqa/query',
+                    type: 'get',
+                    data: {
+                        appkey: "5fffcd00bfa51ad3",
+                        question: "杭州天气"
+                    },
+                    dataType: 'jsonp',
+                    success: function (data) {
+                        data = tabData;
+                        var bodyData;
+                        var imgData;
+                        var _html = "";  //tabHtml
+                        var _Html = "";  //主体html
+                        var _childrenHtml = ""; //主体html下的列表html
+                        var _imgHtml = ""; //list中的图标html（个人 法人 其他组织）
+                        var tabWrap = $('#swTab');
+                        var contentWrap = $('.demo-content-scroll-nav');
+                        for (var i = 0; i < tabData.length; i++) {
+                            //数据判断
+                            if (typeof (tabData[i].name) === 'undefined' || typeof (tabData[i].children) === 'undefined') {
+                                console.log("数据错误");
+                                return;
+                            }
+                            //数据操作
+                            bodyData = data[i].children;
+                            if (i === 0) {
+                                _html += `<div class="am-tab-item selected">
+                                                <span>${tabData[i].name}</span>
+                                            </div>`;
+                            } else {
+                                _html += `<div class="am-tab-item">
+                                                <span>${tabData[i].name}</span>
+                                            </div>`;
+                            }
+                            _Html += `<div class="sw-vertial-scroll am-list am-list-twoline-text am-list-twoline-text-item">
+                                        <div class="am-list-body sw-vertial-scroll-nav">`
+                            _childrenHtml = '';
+                            for (var j = 0; j < bodyData.length; j++) {
+                                _imgHtml = '';
+                                imgData = bodyData[j].serviceObject;
+                                imgData = imgData.split(" ");
+                                for (var k = 0; k < imgData.length; k++) {
+                                    if (imgData[k] == "个人") {
+                                        _imgHtml += `<img src="images/person.png" alt="图片">
+                                                <span class="sw-brief-text">个人</span>`;
+                                    } else if (imgData[k] == "法人") {
+                                        _imgHtml += `<img src="images/corp.png" alt="图片">
+                                                <span class="sw-brief-text">法人</span>`;
+                                    } else if (imgData[k] == "其他组织") {
+                                        _imgHtml += `<img src="images/group.png" alt="图片">
+                                                <span class="sw-brief-text">其他组织</span>`;
+                                    }
+                                }
+                                _childrenHtml += `<a href="javascript:void(0)" class="am-list-item sw-vertial-item">
+                                                    <div class="am-list-content">
+                                                        <div class="am-list-title">${bodyData[j].name}</div>
+                                                        <div class="am-list-brief">
+                                                            ${_imgHtml}
+                                                            <div class="sw-brief-link">
+                                                                <img src="images/line_transact_sm.png" alt="图片">
+                                                                <span class="sw-brief-text">在线办理</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="am-list-arrow" aria-hidden="true">
+                                                        <span class="am-icon arrow horizontal"></span>
+                                                    </div>
+                                                </a>`;
+                            }
+                            _Html += `${_childrenHtml}</div></div>`
+
+                        }
+                        contentWrap.html(_Html);
+                        tabWrap.html(_html);
+
+                        var singleWidth = $(".sw-vertial-scroll").width();
+
+                        var _width = singleWidth * $(".sw-vertial-scroll").length;
+                        $(".demo-content-scroll-nav").width(_width);
+
+                        tabSwiper();
+                        bodySwiper();
+
+                        
+                    }
+                })
+            })
+
+//tab的点击事件
+$("#swTab").on("click", ".am-tab-item", function () {
+                            var tabIndex = $(this).index();
+                            mySwiper2.slideTo(tabIndex, 200, false)
+                        })
+
+            function tabSwiper() {
+                // 标签栏swiper
+                mySwiper1 = new Swiper('.demo-tab-scroll', {
+                    wrapperClass: 'am-tab-scroll-nav',
+                    slideClass: 'am-tab-item',
+                    slidesPerView: "auto",                    
+                    freeMode: true,                    
+                    onTap: function (swiper, e) {
+                        if (!!swiper.clickedSlide) {
+                            $(swiper.slides).removeClass('selected');
+                            $(swiper.clickedSlide).addClass('selected');
+                        }
+                    },
+                });
+            }
+
+            function bodySwiper() {
+                // 主体swiper
+                mySwiper2 = new Swiper('.demo-content-scroll', {
+                    wrapperClass: 'demo-content-scroll-nav',
+                    slideClass: 'am-list-twoline-text-item',
+                    autoHeight: true,
+                    onSlideChangeEnd: function (swiper) {
+                        $($(".am-tab-item")[swiper.activeIndex])
+                            .addClass("selected")
+                            .siblings()
+                            .removeClass("selected");
+                        // var _height = $($(".sw-vertial-scroll")[swiper.activeIndex]).height();                        
+                        tabMove(swiper.activeIndex);
+                    }
+                });
+            }
+
+
+            //tab 的 move
+            function tabMove(index) {
+                var $inTab = $($(".am-tab-item")[index]);
+                var inTabLeft = $inTab.offset().left;
+                var inTabWidth = $inTab.width();
+                var inTabPaddingLeft = parseFloat($inTab.css("padding-left"));
+                var inTabPaddingRight = parseFloat($inTab.css("padding-right"));
+                var moveX = 0;
+
+                var translates = document.defaultView.getComputedStyle(document.getElementById('swTab'), null).transform;
+                var tabWrapWidth = $(".demo-tab-scroll").width();
+                inTabWidth = inTabWidth + inTabPaddingLeft + inTabPaddingRight;
+                translates = parseFloat(translates.substring(7).split(',')[4]);
+                if (inTabLeft < 0) {
+                    //tab向右移动                    
+                    moveX = -inTabLeft;
+                } else if (inTabLeft + inTabWidth > tabWrapWidth) {
+                    //ta向左移动                    
+                    moveX = -(inTabLeft);
+                }
+
+                translates = translates + moveX;
+
+                $("#swTab").css({
+                    "transform": "translate3d(" + translates + "px, 0px, 0px)",
+                });
+            }
+
+        })
+    </script>
+
+
+</body>
+
+</html>

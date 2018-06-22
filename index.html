@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"
+    />
+    <link rel="stylesheet" href="https://gw.alipayobjects.com/as/g/antui/antui/10.1.10/dpl/antui.css" />
+    <link rel="stylesheet" href="https://gw.alipayobjects.com/as/g/antui/antui/10.1.10/dpl/widget/search.css" />
+    
+    <script src="js/common/jquery-1.11.3.js"></script>
+    <script src="https://gw.alipayobjects.com/as/g/antui/antui/10.1.10/antui.js"></script>
+    <title>在线办证</title>
+</head>
+<style>
+    .sw-tab-list {
+        margin-top: 0.1rem;
+    }
+</style>
+
+<body>
+    <!-- 搜索栏 -->
+    <a class="am-search-link" aria-label="搜索" href="javascript:void(0)">
+        <div class="am-search-input" aria-hidden="true">
+            <i class="am-icon search"></i>
+            <span class="am-search-ph">搜索</span>
+        </div>
+    </a>
+
+    <!-- 导航栏 -->
+    <div class="am-list am-list-twoline-text">
+        <div class="am-list-body">
+            <a href="javascript:void(0)" class="am-list-item">
+                <div class="am-list-thumb">
+                    <img src="images/government_nav.png" alt="图片">
+                </div>
+                <div class="am-list-content">
+                    <div class="am-list-title">政务导航</div>
+                    <div class="am-list-brief">了解办证流程及相关资料等</div>
+                </div>
+
+                <div class="am-list-arrow">
+                    <span class="am-icon arrow horizontal"></span>
+                </div>
+            </a>
+            <a class="am-list-item" href="guide.html">
+                <div class="am-list-thumb">
+                    <img src="images/line_transact.png" alt="图片">
+                </div>
+                <div class="am-list-content">
+                    <div class="am-list-title">网上办理</div>
+                    <div class="am-list-brief">提供办理可在线办理的证件</div>
+                </div>
+                <div class="am-list-arrow">
+                    <span class="am-icon arrow horizontal"></span>
+                </div>
+            </a>
+            <a class="am-list-item">
+                <div class="am-list-thumb">
+                    <img src="images/my_search.png" alt="图片">
+                </div>
+                <div class="am-list-content">
+                    <div class="am-list-title">我的查询</div>
+                    <div class="am-list-brief">提供相关的服务查询</div>
+                </div>
+                <div class="am-list-arrow">
+                    <span class="am-icon arrow horizontal"></span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- 常用证件 -->
+    <div class="am-list am-list-twoline-text">
+        <div class="am-list-header">常用证件</div>
+        <div class="am-list-body">
+            <a class="am-list-item">
+                <div class="am-list-content">
+                    <div class="am-list-title">就业创业</div>
+                    <div class="am-list-brief">就业困难人员认定</div>
+                </div>
+                <div class="am-list-arrow">
+                    <span class="am-icon arrow horizontal"></span>
+                </div>
+            </a>
+            <a class="am-list-item">
+                <div class="am-list-content">
+                    <div class="am-list-title">就业创业</div>
+                    <div class="am-list-brief">失业登记</div>
+                </div>
+                <div class="am-list-arrow">
+                    <span class="am-icon arrow horizontal"></span>
+                </div>
+            </a>
+            <a class="am-list-item">
+                <div class="am-list-content">
+                    <div class="am-list-title">就业创业</div>
+                    <div class="am-list-brief">灵活就业补助和社会保险费补贴申请、补贴申请少时诵诗书试试水</div>
+                </div>
+                <div class="am-list-arrow">
+                    <span class="am-icon arrow horizontal"></span>
+                </div>
+            </a>
+            <a class="am-list-item">
+                <div class="am-list-content">
+                    <div class="am-list-title">就业创业</div>
+                    <div class="am-list-brief">创业担保代管贴息资格认定申请</div>
+                </div>
+                <div class="am-list-arrow">
+                    <span class="am-icon arrow horizontal"></span>
+                </div>
+            </a>
+            <a class="am-list-item">
+                <div class="am-list-content">
+                    <div class="am-list-title">就业创业</div>
+                    <div class="am-list-brief">用于补助和社会保险费受理、核发</div>
+                </div>
+                <div class="am-list-arrow">
+                    <span class="am-icon arrow horizontal"></span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+
+<script>
+    $(function(){
+        $.ajax({
+            url: 'http://api.jisuapi.com/iqa/query',
+            type: 'get',
+            data: {
+                appkey: "5fffcd00bfa51ad3",
+                question: "杭州天气"
+            },
+            dataType: 'jsonp',
+            success: function(data) {
+                console.log(data);
+                console.log(data.length);
+            }
+        })
+    })
+</script>
+
+</body>
+
+</html>

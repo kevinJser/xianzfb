@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"
+    />
+    <link rel="stylesheet" href="https://gw.alipayobjects.com/as/g/antui/antui/10.1.10/dpl/antui.css" />
+    <link rel="stylesheet" href="css/common/step.css">
+
+
+    <script src="js/common/jquery-1.11.3.js"></script>
+    <script charset="utf-8" src="https://a.alipayobjects.com/static/fastclick/1.0.6/fastclick.min.js"></script>
+    <script src="https://gw.alipayobjects.com/as/g/antui/antui/10.1.10/antui.js"></script>
+    <script src="https://gw.alipayobjects.com/as/g/h5-lib/alipayjsapi/3.1.1/alipayjsapi.min.js"></script>
+
+    <title>在线办理</title>
+</head>
+<style>
+    .img {
+        display: block;
+        max-width: 100%;
+        margin: 20px auto;
+    }
+
+    .am-wingblank.am-wingblank-lg {
+        margin-left: 15px;
+        margin-right: 15px
+    }
+
+    .am-segment {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        border-radius: 5px;
+        overflow: hidden;
+        min-height: 27px;
+        opacity: 1
+    }
+
+    .am-segment.am-segment-disabled {
+        opacity: .5
+    }
+
+    .am-segment-item {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        color: #108ee9;
+        font-size: 14px;
+        line-height: 1;
+        -webkit-transition: background .2s;
+        transition: background .2s;
+        position: relative;
+        border: 1px solid #108ee9;
+        width: 100%;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        border-left-width: 0
+    }
+
+    .am-segment-item-tintcolor {
+        border-color: #108ee9
+    }
+
+    .am-segment-item:first-child {
+        border-left-width: 1px;
+        border-radius: 5px 0 0 5px
+    }
+
+    .am-segment-item:last-child {
+        border-radius: 0 5px 5px 0
+    }
+
+    .am-segment-item-selected {
+        background: #108ee9;
+        color: #fff
+    }
+
+    .am-segment-item-active .am-segment-item-inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        opacity: .1;
+        -webkit-transition: background .2s;
+        transition: background .2s;
+        background-color: #108ee9
+    }
+
+    .am-image-picker-list {
+        padding: 9px 8px 0;
+        margin-bottom: 15px
+    }
+
+    .am-image-picker-list .am-flexbox {
+        margin-bottom: 6px
+    }
+
+    .am-image-picker-list .am-flexbox .am-flexbox-item {
+        position: relative;
+        margin-right: 5px;
+        margin-left: 0
+    }
+
+    .am-image-picker-list .am-flexbox .am-flexbox-item:after {
+        display: block;
+        content: " ";
+        padding-bottom: 100%
+    }
+
+    .am-image-picker-list .am-flexbox .am-flexbox-item:nth-child(4n) {
+        margin-right: 0
+    }
+
+    .am-image-picker-list .am-image-picker-item {
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        width: 100%;
+        height: 100%
+    }
+
+    .am-image-picker-list .am-image-picker-item .am-image-picker-item-remove {
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        right: 6px;
+        top: 6px;
+        text-align: right;
+        vertical-align: top;
+        z-index: 2;
+        background-size: 15px auto;
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='16' height='16' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Ccircle fill-opacity='.4' fill='%23404040' cx='8' cy='8' r='8'/%3E%3Cpath d='M11.898 4.101a.345.345 0 0 0-.488 0L8 7.511l-3.411-3.41a.345.345 0 0 0-.488.488l3.411 3.41-3.41 3.412a.345.345 0 0 0 .488.488L8 8.487l3.411 3.411a.345.345 0 0 0 .488-.488L8.488 8l3.41-3.412a.344.344 0 0 0 0-.487z' fill='%23FFF'/%3E%3C/g%3E%3C/svg%3E")
+    }
+
+    .am-image-picker-list .am-image-picker-item .am-image-picker-item-content {
+        height: 100%;
+        width: 100%;
+        border-radius: 3px;
+        background-size: cover
+    }
+
+    .am-image-picker-list .am-image-picker-item img {
+        width: 100%
+    }
+
+    .am-image-picker-list .am-image-picker-upload-btn {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        border-radius: 3px;
+        border: 1px solid #ddd;
+        background-color: #fff
+    }
+
+    .am-image-picker-list .am-image-picker-upload-btn:after,
+    .am-image-picker-list .am-image-picker-upload-btn:before {
+        width: 1px;
+        height: 25px;
+        content: " ";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        background-color: #ccc
+    }
+
+    .am-image-picker-list .am-image-picker-upload-btn:after {
+        width: 25px;
+        height: 1px
+    }
+
+    .am-image-picker-list .am-image-picker-upload-btn-active {
+        background-color: #ddd
+    }
+
+    .am-image-picker-list .am-image-picker-upload-btn input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        opacity: 0
+    }
+
+    .demoContainer {
+        background-color: #ffffff;
+    }
+
+    .demoContainer .demoContainer-label {
+        font-size: 17px;
+        color: #000;
+        height: 47px;
+        line-height: 47px;
+    }
+</style>
+
+<body>
+    <!-- 步骤条部分 -->
+    <div class="sw-steps">
+        <div class="sw-steps-item">
+
+        </div>
+    </div>
+
+    <div class="am-steps am-steps-horizontal am-steps-label-vertical">
+        <div class="am-steps-item am-steps-item-finish am-steps-item-custom">
+            <div class="am-steps-item-tail">
+            </div>
+            <div class="am-steps-item-icon">
+                <span class="am-steps-icon">
+                    <svg class="am-icon am-icon-check-circle-o am-icon-md">
+                        <use xlink:href="#check-circle-o">
+                            <svg id="check-circle-o" viewBox="0 0 48 48" width="100%" height="100%">
+                                <g fill-rule="evenodd">
+                                    <path d="M24 48c13.255 0 24-10.745 24-24S37.255 0 24 0 0 10.745 0 24s10.745 24 24 24zm0-3c11.598 0 21-9.402 21-21S35.598 3 24 3 3 12.402 3 24s9.402 21 21 21z"></path>
+                                    <path d="M12.2 23.2L10 25.3l10 9.9L37.2 15 35 13 19.8 30.8z"></path>
+                                </g>
+                            </svg>
+                        </use>
+                    </svg>
+                </span>
+            </div>
+            <div class="am-steps-item-content">
+                <div class="am-steps-item-title">阅读须知</div>
+            </div>
+        </div>
+        <div class="am-steps-item am-steps-item-process">
+            <div class="am-steps-item-tail"></div>
+            <div class="am-steps-item-icon">
+                <span class="am-steps-icon">2</span>
+            </div>
+            <div class="am-steps-item-content">
+                <div class="am-steps-item-title">申报信息</div>
+            </div>
+        </div>
+        <div class="am-steps-item am-steps-item-wait ellipsis-item am-steps-item-custom">
+            <div class="am-steps-item-tail"></div>
+            <div class="am-steps-item-icon">
+                <span class="am-steps-icon">
+                    <svg class="am-icon am-icon-ellipsis am-icon-md">
+                        <use xlink:href="#ellipsis">
+                            <svg id="ellipsis" viewBox="0 0 44 44" width="100%" height="100%">
+                                <circle cx="21.888" cy="22" r="4.045"></circle>
+                                <circle cx="5.913" cy="22" r="4.045"></circle>
+                                <circle cx="37.863" cy="22" r="4.045"></circle>
+                            </svg>
+                        </use>
+                    </svg>
+                </span>
+            </div>
+            <div class="am-steps-item-content">
+                <div class="am-steps-item-title">申报告知</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主体部分 -->
+    <div class="am-list">
+        <div class="am-list-header">证件名称</div>
+        <div class="am-list-body">
+            <div class="am-list-item">
+                <div class="am-list-content">失业登记</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="am-list am-list-form">
+        <div class="am-list-header">基本信息</div>
+        <div class="am-list-body">
+            <div class="am-list-item am-input-autoclear">
+                <div class="am-list-label" id="list-label-2">姓名</div>
+                <div class="am-list-control">
+                    <input id="demo-input-2" type="text" placeholder="内容内容" value="" aria-labelledby="list-label-2">
+                </div>
+                <div class="am-list-clear" tabindex="0" aria-label="清空输入框" aria-controls="demo-input-2">
+                    <i class="am-icon-clear am-icon" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="am-list-item am-input-autoclear">
+                <div class="am-list-label" id="list-label-3">身份证号</div>
+                <div class="am-list-control">
+                    <input id="demo-input-3" type="text" placeholder="内容内容" value="" aria-labelledby="list-label-3">
+                </div>
+                <div class="am-list-clear" tabindex="0" aria-label="清空输入框" aria-controls="demo-input-3">
+                    <i class="am-icon-clear am-icon" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="am-list-item am-input-autoclear">
+                <div class="am-list-label" id="list-label-3">地址</div>
+                <div class="am-list-control">
+                    <input id="demo-input-3" type="text" placeholder="内容内容" value="" aria-labelledby="list-label-3">
+                </div>
+                <div class="am-list-clear" tabindex="0" aria-label="清空输入框" aria-controls="demo-input-3">
+                    <i class="am-icon-clear am-icon" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="am-list-item am-input-autoclear">
+                <div class="am-list-label" id="list-label-3">联系方式</div>
+                <div class="am-list-control">
+                    <input id="demo-input-3" type="number" placeholder="内容内容" value="" aria-labelledby="list-label-3">
+                </div>
+                <div class="am-list-clear" tabindex="0" aria-label="清空输入框" aria-controls="demo-input-3">
+                    <i class="am-icon-clear am-icon" aria-hidden="true"></i>
+                </div>
+            </div>
+
+            <div class="am-list" style="">
+                <div class="am-list-body">
+                    <div class="am-list-item am-textarea-item">
+                        <div class="am-textarea-label">备注（非必填）</div>
+                    </div>
+                    <div class="am-list-item am-textarea-item">
+                        <div class="am-textarea-control">
+                            <textarea rows="5" style="" placeholder="参考填写：一、提交材料的就近街道地址；二、取证：选择邮寄/地址（到付）或自提/就近街道；三、于窗口人员互动，居民的个人特殊情况说明"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="am-list am-list-form">
+        <div class="am-list-header">申报材料</div>
+        <div class="am-list-body">
+            <div class="am-list-item am-input-autoclear">
+                <div class="am-list-label">阶段</div>
+                <div class="am-list-control J-certificate">
+                    申报
+                </div>
+                <div class="am-list-arrow" aria-hidden="true">
+                    <span class="am-icon arrow horizontal"></span>
+                </div>
+            </div>
+            <div class="am-list-item am-input-autoclear">
+                <div class="am-list-label">条件</div>
+                <div class="am-list-control T-certificate">
+                    证件类型
+                </div>
+                <div class="am-list-arrow" aria-hidden="true">
+                    <span class="am-icon arrow horizontal"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="demoContainer">
+        <div class="am-wingblank am-wingblank-lg" style="">
+            <div class="demoContainer-label">1.身份证</div>
+            <div class="am-segment" role="tablist">
+                <div class="am-segment-item sw-windows">
+                    <div class="am-segment-item-inner"></div>窗口提交</div>
+                <div class="am-segment-item am-segment-item-selected sw-online">
+                    <div class="am-segment-item-inner"></div>在线提交</div>
+            </div>
+            <div class="am-image-picker" style="">
+                <div class="am-image-picker-list" role="group">
+                    <div class="am-flexbox am-flexbox-align-center" style="">
+                        <div class="am-flexbox-item" style="">
+                            <div class="am-image-picker-item">
+                                <div class="am-image-picker-item-remove"></div>
+                                <div class="am-image-picker-item-content" style="background-image: url(&quot;https://zos.alipayobjects.com/rmsportal/PZUUCKTRIHWiZSY.jpeg&quot;); transform: rotate(0deg);"></div>
+                            </div>
+                        </div>
+                        <div class="am-flexbox-item" style="">
+                            <div class="am-image-picker-item">
+                                <div class="am-image-picker-item-remove"></div>
+                                <div class="am-image-picker-item-content" style="background-image: url(&quot;https://zos.alipayobjects.com/rmsportal/hqQWgTXdrlmVVYi.jpeg&quot;); transform: rotate(0deg);"></div>
+                            </div>
+                        </div>
+                        <div class="am-flexbox-item" style="">
+                            <div class="am-image-picker-item am-image-picker-upload-btn">
+                            </div>
+                        </div>
+                        <div class="am-flexbox-item" style="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a class="am-button am-button-primary">
+        <span>提交</span>
+    </a>
+
+
+
+
+    <script>
+
+        ; $(function () {
+            if (window.amAutoClear) {
+                window.amAutoClear();
+                window.amInputErrorTip();
+            }
+
+            //图片添加
+            $(".demoContainer").on("click", ".am-image-picker-upload-btn", function () {
+                var _this = this;
+
+                var _html = `<div class="am-image-picker-item-remove"></div>
+                                <div class="am-image-picker-item-content" style="background-image: url(&quot;https://zos.alipayobjects.com/rmsportal/PZUUCKTRIHWiZSY.jpeg&quot;); transform: rotate(0deg);"></div>`
+                var _nextHtml = "";
+                var _next = $(_this).parent('.am-flexbox-item').next('.am-flexbox-item');
+                var _siblingsWrap = $(_this).parent('.am-flexbox-item').parent('.am-flexbox').siblings('.am-flexbox');
+
+                $(_this).removeClass('am-image-picker-upload-btn')
+                    .html(_html);
+                if (_next.length == 0 && _siblingsWrap.length == 0) {
+                    _nextHtml = `<div class="am-flexbox am-flexbox-align-center" style="">
+                                            <div class="am-flexbox-item" style="">
+                                                <div class="am-image-picker-item am-image-picker-upload-btn">
+                                                </div>
+                                            </div>  
+                                            <div class="am-flexbox-item" style="">
+                                            </div>
+                                            <div class="am-flexbox-item" style="">
+                                            </div>
+                                            <div class="am-flexbox-item" style="">
+                                            </div>                                          
+                                        </div>`;
+                    $(_this).closest(".am-flexbox").after(_nextHtml);
+
+                } else if (_next.length !== 0 && _siblingsWrap.length == 0) {
+                    _nextHtml = `<div class="am-image-picker-item am-image-picker-upload-btn">
+                                        </div>`;
+                    _next.html(_nextHtml);
+                }
+                // ap.chooseImage(1, function (res) {
+                //     // ap.alert(JSON.stringify(res));
+                //     var _html = `<div class="am-image-picker-item-remove"></div>
+                //                 <div class="am-image-picker-item-content" style="background-image: url(${res.apFilePaths[0]}); transform: rotate(0deg);"></div>`
+                //     var _nextHtml = "";
+                //     var _next = $(_this).parent('.am-flexbox-item').next('.am-flexbox-item');                    
+
+                //     $(_this).removeClass('am-image-picker-upload-btn')
+                //         .html(_html);
+                //     if (_next.length == 0) {
+                //         _nextHtml = `<div class="am-flexbox am-flexbox-align-center" style="">
+                //                             <div class="am-flexbox-item" style="">
+                //                                 <div class="am-image-picker-item am-image-picker-upload-btn">
+                //                                 </div>
+                //                             </div>
+                //                             <div class="am-flexbox-item" style="">
+                //                             </div>
+                //                             <div class="am-flexbox-item" style="">
+                //                             </div>                                            
+                //                             <div class="am-flexbox-item" style="">
+                //                             </div>
+                //                         </div>`;                       
+                //         $(_this).closest(".am-flexbox").after(_nextHtml);
+
+                //     }else {
+                //         _nextHtml = `<div class="am-image-picker-item am-image-picker-upload-btn">
+                //                         </div>`;
+                //         _next.html(_nextHtml);
+                //     }
+
+                //     // if (img instanceof HTMLImageElement) {
+                //     //     img.src = res.apFilePaths[0];
+                //     // }
+                // });
+            })
+
+            //图片删除
+            $(".demoContainer").on("click", ".am-image-picker-item-remove", function () {
+                var prev = $(this).closest(".am-flexbox").prev(".am-flexbox");
+                var next = $(this).closest(".am-flexbox").next(".am-flexbox");
+                var _html = `<div class="am-flexbox-item" style=""></div>`;
+                var _uploadHtml = `<div class="am-image-picker-item am-image-picker-upload-btn"></div>`;
+
+
+
+                if (prev.length == 1) {
+                    $(this).closest(".am-flexbox-item").html(_uploadHtml);
+                } else {
+                    var newAdd = $(_html).appendTo($(this).closest(".am-flexbox-item").parent(".am-flexbox"));
+                    $(this).closest(".am-flexbox-item").remove();
+                    if (next.length == 1) {
+                        var nextHtml = $(next.children(".am-flexbox-item")[0]).html();
+                        var hasUpload = $(next.children(".am-flexbox-item")[0]).children().hasClass("am-image-picker-upload-btn");
+                        newAdd.html(nextHtml);
+                        if (hasUpload) {
+                            next.remove();
+                        } else {
+                            $(next.children(".am-flexbox-item")[0]).html(_uploadHtml);
+                        }
+                    }
+                }
+            })
+
+            //图片提交方式选择
+            $(".demoContainer").on("click", ".am-segment-item", function () {
+                var isSelected = $(this).hasClass("am-segment-item-selected");
+                var isOnline = $(this).hasClass("sw-online");
+                if (!isSelected) {
+                    $(this).addClass("am-segment-item-selected")
+                        .siblings().removeClass("am-segment-item-selected");
+                    if (isOnline) {
+                        $(this).parent().next('.am-image-picker').show();
+                    } else {
+                        $(this).parent().next('.am-image-picker').hide();
+                    }
+                }
+
+            })
+
+            //图片预览
+            // $(".demoContainer").on("click", ".am-image-picker-item-content", function() {
+            //     var _url = $(this).css("background-image");
+            //     _url =  _url.split("(")[1].split(")")[0];
+            //     ap.previewImage({
+            //         current: 2,
+            //         urls: [
+            //             'https://img.alicdn.com/tps/TB1sXGYIFXXXXc5XpXXXXXXXXXX.jpg'
+            //         ]
+            //     });
+            // })           
+
+            var isInAlipay = (navigator.userAgent.indexOf("AlipayClient") > -1 || navigator.userAgent.indexOf("AliApp(AP") > -1);
+            if (isInAlipay) {
+                $('.J-certificate').click(function () {
+                    var _this = this;
+                    AlipayJSBridge.call('beehiveOptionsPicker', {
+                        optionsOne: ["居民户口薄", "身份证", "临时身份证", "军官证"],
+                    }, function (result) {
+                        if (!!result.selectedOneOption) {
+                            $(_this).html(result.selectedOneOption)
+                        }
+                        ;
+                    });
+                })
+                $('.T-certificate').click(function () {
+                    var _this = this;
+                    AlipayJSBridge.call('beehiveOptionsPicker', {
+                        optionsOne: ["居民户口薄", "身份证", "临时身份证", "军官证"],
+                    }, function (result) {
+                        if (!!result.selectedOneOption) {
+                            $(_this).html(result.selectedOneOption)
+                        }
+                        ;
+                    });
+                })
+
+            } else {
+                // alert("请使用支付宝打开!");
+            }
+
+        })
+    </script>
+
+</body>
+
+</html>
